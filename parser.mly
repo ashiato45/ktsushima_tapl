@@ -11,6 +11,11 @@
 %token SUCC
 %token ISZERO
 %token ZERO
+%token TRUE
+%token FALSE
+%token IF
+%token THEN
+%token ELSE
 %token EOF
 /* End of File */
 
@@ -26,4 +31,7 @@ value:
 | SUCC value {Syntax.Succ($2)}
 | PRED value {Syntax.Pred($2)}
 | ISZERO value {Syntax.IsZero($2)}
+| TRUE {Syntax.True}
+| FALSE {Syntax.False}
+| IF value THEN value ELSE value {Syntax.If($2, $4, $6)}
 | LPAREN value RPAREN {$2}

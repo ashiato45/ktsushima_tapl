@@ -15,6 +15,11 @@ rule token = parse
 | "pred" { PRED }
 | "succ" { SUCC }
 | "iszero" { ISZERO }
+| "true" { TRUE }
+| "false" { FALSE }
+| "if" { IF }
+| "then" { THEN }
+| "else" { ELSE }
 | "("   { LPAREN }
 | ")"   { RPAREN }
 | digit+                       
